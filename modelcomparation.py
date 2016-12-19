@@ -5,18 +5,12 @@ Implemented as Functional Procedure
 '''
 import numpy as np
 import sklearn.cross_validation
-import DeepSurvex as deep_surv
-import DeepSurvPre as deep_surv_pre
 import DeepConvSurv as deep_conv_surv
-import DeepConvSurvPre as deep_conv_surv_pre
-import DeepMultiSurv as deep_multi_surv
-import DeepMultiSurvPre as deep_multi_surv_pre
-import DeepCCASurv as deep_cca
 import pandas as pd
 import os
 
 #hyperparams
-model = 'deepmultisurv-pre'
+model = 'deepconvsurv'
 epochs = 20
 lr = 5e-4
 seed = 1
@@ -199,8 +193,8 @@ def model_selection(img_path, clinical_path, label_path, expand_label_path,
 
 if __name__ == '__main__':
     print "Model_selection Unit Test"
-    model_selection(img_path='/media/dataset/nlst-patch_1000', clinical_path = '/media/dataset/nlst-patch_1000/clinicalNormalized.csv',
-                   label_path='/media/dataset/nlst-patch_1000/validpatients.csv', expand_label_path = '/media/dataset/nlst-patch_1000/patchsurv1000.csv', model=model, train_test_ratio=0.9, train_valid_ratio=0.9)
+    model_selection(img_path='/smile/nfs/xlzhu/nlst-patch_1000', clinical_path = '/smile/nfs/xlzhu/nlst-patch_1000/clinicalNormalized.csv',
+                   label_path='/smile/nfs/xlzhu/nlst-patch_1000/validpatients.csv', expand_label_path = '/smile/nfs/xlzhu/nlst-patch_1000/patchsurv1000.csv', model=model, train_test_ratio=0.9, train_valid_ratio=0.9)
 else:
     print "Load Model Selection Module"
 
